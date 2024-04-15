@@ -1,7 +1,7 @@
 
 export const GoogleButton = () => {
     return (
-        <button class="signin">
+        <button className="signin">
             <svg
                 viewBox="0 0 256 262"
                 preserveAspectRatio="xMidYMid"

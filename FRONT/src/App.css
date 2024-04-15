@@ -9,10 +9,12 @@
 
 #form-ui {
   width: 100%;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #161616;
-  padding-top: 5%;
-  padding-left: 38%;
+  position: absolute;
+  height: 100vh;
 }
 
 #form {
@@ -59,11 +61,13 @@
 }
 
 .form-inp {
-  padding: 11px 25px;
+  padding: 0px 18px;
   background: transparent;
   border: 1px solid #e3e3e3;
   line-height: 1;
   border-radius: 8px;
+  display: flex;
+  height: 2.5rem;
 }
 
 .form-inp:focus {
@@ -116,16 +120,28 @@
   cursor: pointer;
 }
 
-#forgot-pass {
+#have-account {
   text-align: center;
   margin-top: 10px;
 }
 
-#forgot-pass a {
+#have-account button {
   color: #868686;
   font-size: 12px;
-  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }  
+.btn-pssw {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.show-password {
+  width: 18px;
+  margin-top: 4px;
+}
+
 
 /* ******************* GOOGLE BUTTON ****************** */
 .signin {
