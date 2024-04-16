@@ -4,6 +4,7 @@ import (
 	"brainyquiz/config/initializers"
 	"brainyquiz/internal/delivery/handlers"
 	"brainyquiz/internal/domain/services"
+	"brainyquiz/internal/repository/auth"
 	"brainyquiz/internal/repository/user"
 	"net/http"
 
@@ -42,6 +43,15 @@ func main() {
 	router.POST("/users", usersHandler.CreateUser)
 	router.GET("/users/email/:email", usersHandler.GetUserByEmail)
 	router.GET("/users/:userName", usersHandler.GetUserByUserName)
+
+	AuthRepository := auth.NewAuthRepository(db)
+	authService := services.NewAuthService(AuthRepository)
+	authHandler := handlers.NewAuthHandler(*authService)
+
+	Auth := router.Group("/auth")
+	{
+		Auth.POST("/login", authHandler.LoginWithEmail)
+	}
 
 	if err := router.Run(":8080"); err != nil {
 		panic("Failed to start server")
