@@ -26,3 +26,23 @@ func (h *UserHandler) CreateUser(c *gin.Context) {
 	}
 	c.JSON(200, gin.H{"message": "User created successfully"})
 }
+
+func (h *UserHandler) GetUserByEmail(c *gin.Context) {
+	email := c.Param("email")
+	user, err := h.userService.GetUserByEmail(c, email)
+	if err != nil {
+		c.JSON(400, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(200, user)
+}
+
+func (h *UserHandler) GetUserByUserName(c *gin.Context) {
+	userName := c.Param("userName")
+	user, err := h.userService.GetUserByUserName(c, userName)
+	if err != nil {
+		c.JSON(400, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(200, user)
+}
