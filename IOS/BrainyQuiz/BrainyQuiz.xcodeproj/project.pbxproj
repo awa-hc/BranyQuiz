@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D20714312BCE83FE0023D92F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20714302BCE83FE0023D92F /* AppDelegate.swift */; };
-		D20714332BCE83FE0023D92F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D20714322BCE83FE0023D92F /* GameScene.sks */; };
-		D20714352BCE83FE0023D92F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D20714342BCE83FE0023D92F /* Actions.sks */; };
 		D20714372BCE83FE0023D92F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20714362BCE83FE0023D92F /* GameScene.swift */; };
 		D20714392BCE83FE0023D92F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20714382BCE83FE0023D92F /* GameViewController.swift */; };
 		D207143C2BCE83FE0023D92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D207143A2BCE83FE0023D92F /* Main.storyboard */; };
@@ -19,6 +17,9 @@
 		D20714552BCE84000023D92F /* BrainyQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20714542BCE84000023D92F /* BrainyQuizUITests.swift */; };
 		D20714572BCE84000023D92F /* BrainyQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20714562BCE84000023D92F /* BrainyQuizUITestsLaunchTests.swift */; };
 		D2EF88BC2BCE8826002104C8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EF88BB2BCE8826002104C8 /* WelcomeView.swift */; };
+		D2EF88BF2BCF5655002104C8 /* ButtonInfinite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EF88BE2BCF5655002104C8 /* ButtonInfinite.swift */; };
+		D2EF88C22BCF5A9B002104C8 /* DividerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EF88C12BCF5A9B002104C8 /* DividerText.swift */; };
+		D2EF88C52BCF6980002104C8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EF88C42BCF6980002104C8 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,6 @@
 /* Begin PBXFileReference section */
 		D207142D2BCE83FE0023D92F /* BrainyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20714302BCE83FE0023D92F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D20714322BCE83FE0023D92F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		D20714342BCE83FE0023D92F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		D20714362BCE83FE0023D92F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D20714382BCE83FE0023D92F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D207143B2BCE83FE0023D92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +52,11 @@
 		D20714502BCE84000023D92F /* BrainyQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainyQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20714542BCE84000023D92F /* BrainyQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyQuizUITests.swift; sourceTree = "<group>"; };
 		D20714562BCE84000023D92F /* BrainyQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2C8FDA32BCF93FF0001A4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D2EF88BB2BCE8826002104C8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D2EF88BE2BCF5655002104C8 /* ButtonInfinite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfinite.swift; sourceTree = "<group>"; };
+		D2EF88C12BCF5A9B002104C8 /* DividerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerText.swift; sourceTree = "<group>"; };
+		D2EF88C42BCF6980002104C8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		D207142F2BCE83FE0023D92F /* BrainyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				D2C8FDA32BCF93FF0001A4D1 /* Info.plist */,
 				D2EF88B72BCE8751002104C8 /* Resources */,
 				D2EF88B62BCE8749002104C8 /* Utils */,
 				D2EF88B52BCE873C002104C8 /* Networking */,
@@ -111,8 +115,6 @@
 				D2EF88B32BCE872D002104C8 /* View */,
 				D2EF88B22BCE8729002104C8 /* Model */,
 				D20714302BCE83FE0023D92F /* AppDelegate.swift */,
-				D20714322BCE83FE0023D92F /* GameScene.sks */,
-				D20714342BCE83FE0023D92F /* Actions.sks */,
 				D20714362BCE83FE0023D92F /* GameScene.swift */,
 				D20714382BCE83FE0023D92F /* GameViewController.swift */,
 				D207143A2BCE83FE0023D92F /* Main.storyboard */,
@@ -149,7 +151,10 @@
 		D2EF88B32BCE872D002104C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2EF88C02BCF5A8A002104C8 /* Divider */,
+				D2EF88BD2BCF5630002104C8 /* Buttons */,
 				D2EF88BB2BCE8826002104C8 /* WelcomeView.swift */,
+				D2EF88C42BCF6980002104C8 /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +185,22 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2EF88BD2BCF5630002104C8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D2EF88BE2BCF5655002104C8 /* ButtonInfinite.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D2EF88C02BCF5A8A002104C8 /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				D2EF88C12BCF5A9B002104C8 /* DividerText.swift */,
+			);
+			path = Divider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,10 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D207143C2BCE83FE0023D92F /* Main.storyboard in Resources */,
-				D20714332BCE83FE0023D92F /* GameScene.sks in Resources */,
 				D207143E2BCE84000023D92F /* Assets.xcassets in Resources */,
 				D20714412BCE84000023D92F /* LaunchScreen.storyboard in Resources */,
-				D20714352BCE83FE0023D92F /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,10 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EF88C22BCF5A9B002104C8 /* DividerText.swift in Sources */,
 				D20714372BCE83FE0023D92F /* GameScene.swift in Sources */,
 				D20714392BCE83FE0023D92F /* GameViewController.swift in Sources */,
+				D2EF88C52BCF6980002104C8 /* RegisterView.swift in Sources */,
 				D20714312BCE83FE0023D92F /* AppDelegate.swift in Sources */,
 				D2EF88BC2BCE8826002104C8 /* WelcomeView.swift in Sources */,
+				D2EF88BF2BCF5655002104C8 /* ButtonInfinite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +452,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -487,6 +510,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -502,12 +526,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DU4893N3XQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainyQuiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,12 +555,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DU4893N3XQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainyQuiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

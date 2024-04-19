@@ -2,6 +2,7 @@ package main
 
 import (
 	"brainyquiz/config/initializers"
+	middleware "brainyquiz/internal/Middleware"
 	"brainyquiz/internal/delivery/handlers"
 	"brainyquiz/internal/domain/services"
 	"brainyquiz/internal/repository/auth"
@@ -43,6 +44,12 @@ func main() {
 	router.POST("/users", usersHandler.CreateUser)
 	router.GET("/users/email/:email", usersHandler.GetUserByEmail)
 	router.GET("/users/:userName", usersHandler.GetUserByUserName)
+
+	validateGroup := router.Group("/validate")
+	validateGroup.Use(middleware.Auth(db))
+	{
+		validateGroup.GET("/:email", usersHandler.GetUserByEmail)
+	}
 
 	AuthRepository := auth.NewAuthRepository(db)
 	authService := services.NewAuthService(AuthRepository)
