@@ -59,7 +59,6 @@ func Auth(db *gorm.DB) gin.HandlerFunc {
 				return
 			}
 
-			// Establecer el usuario en el contexto para su uso posterior
 			c.Set("user", user)
 			c.Next()
 		} else {
