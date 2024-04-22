@@ -2,8 +2,11 @@ package main
 
 import (
 	"brainyquiz/config/initializers"
+	middleware "brainyquiz/internal/Middleware"
 	"brainyquiz/internal/delivery/handlers"
 	"brainyquiz/internal/domain/services"
+	"brainyquiz/internal/repository/auth"
+	"brainyquiz/internal/repository/friend"
 	"brainyquiz/internal/repository/user"
 	"net/http"
 
@@ -21,8 +24,7 @@ func main() {
 	router := gin.Default()
 
 	router.Use(cors.New(cors.Config{
-		AllowOrigins: []string{"*"},
-		// AllowOrigins:     []string{"https://srmaca.vercel.app"},
+		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"PUT", "PATCH", "POST", "GET", "DELETE"},
 		AllowHeaders:     []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
@@ -43,6 +45,32 @@ func main() {
 	router.POST("/users", usersHandler.CreateUser)
 	router.GET("/users/email/:email", usersHandler.GetUserByEmail)
 	router.GET("/users/:userName", usersHandler.GetUserByUserName)
+
+	validateGroup := router.Group("/validate")
+	validateGroup.Use(middleware.Auth(db))
+	{
+		validateGroup.GET("/:email", usersHandler.GetUserByEmail)
+	}
+
+	AuthRepository := auth.NewAuthRepository(db)
+	authService := services.NewAuthService(AuthRepository)
+	authHandler := handlers.NewAuthHandler(*authService)
+
+	Auth := router.Group("/auth")
+	{
+		Auth.POST("/login", authHandler.LoginWithEmail)
+	}
+
+	FriendRepository := friend.NewFriendRepository(db)
+	friendService := services.NewFriendService(FriendRepository)
+	friendHandler := handlers.NewFriendHandler(*friendService)
+	Friend := router.Group("/friend")
+	Friend.Use(middleware.Auth(db))
+	{
+		Friend.POST("/add", friendHandler.AddFriend)
+		Friend.POST("/remove", friendHandler.RemoveFriend)
+		Friend.GET("/:username", friendHandler.GetFriends)
+	}
 
 	if err := router.Run(":8080"); err != nil {
 		panic("Failed to start server")

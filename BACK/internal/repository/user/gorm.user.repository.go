@@ -30,7 +30,7 @@ func (r *gormUserRepository) CreateUser(ctx context.Context, user *entities.User
 
 func (r *gormUserRepository) GetUserByEmail(ctx context.Context, email string) (*entities.User, error) {
 	var user entities.User
-	err := r.db.Where("email = ?", email).First(&user).Error
+	err := r.db.WithContext(ctx).Where("email = ?", email).First(&user).Error
 	if err != nil {
 		return nil, err
 	}
