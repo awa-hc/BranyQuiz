@@ -10,6 +10,7 @@ export const Login = () => {
     const [register, setRegister] = useState(true)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('')
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -19,23 +20,44 @@ export const Login = () => {
         e.preventDefault()
         if (register === false) {
             //inicio de sesion
-        } else{
-            // registro de usuario
-            const response = await fetch('url_del_backend', {
+            const response = await fetch('http://localhost:8080', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email: email, password: password})
+                body: JSON.stringify({username: username, password: password})
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+                alert('Inicio de sesión exitoso')
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+            } else {
+                console.error('Error:', response.status);
+                alert('Error al iniciar sesión')
+            }
+
+        } else{
+            // registro de usuario
+            const response = await fetch('http://localhost:8080', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: username, email: email, password: password})
             });
     
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
-
+                alert('Usuario registrado con exito')
                 localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
             } else {
                 console.error('Error:', response.status);
+                alert('Error al registrar usuario')
             }
         };
         }
@@ -56,14 +78,28 @@ export const Login = () => {
                     <div id="input-area">
                     <div className="form-inp">
                         <input 
+                            type="text"
+                            placeholder="Nombre de usuario" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            autoComplete="off"
+                        />
+                        
+                    </div>
+                    
+                    { register && (
+                        <div className="form-inp">
+                            <input 
                             type="email"
                             placeholder="Correo electrónico" 
                             value={email} 
                             onChange={(e) => setEmail(e.target.value)} 
                             autoComplete="off"
-                        />
-                        
-                    </div>
+                            />
+                        </div>
+                    ) 
+                    }
+                    
                     <div className="form-inp">
                         <input 
                             type={showPassword ? "text" : "password"} 

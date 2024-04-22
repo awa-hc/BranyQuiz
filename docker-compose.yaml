@@ -15,7 +15,7 @@ services:
     depends_on:
       - database
     environment:
-      - DB_HOST=database
+      - DB_HOST=brainyquiz-database
       - DB_PORT=5432
       - DB_USER=brainy
       - DB_PASSWORD=brainy
