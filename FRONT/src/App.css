@@ -296,6 +296,71 @@
   background-color: #331183;
 }
 
+/* *******************   PAGE HOME ****************** */
+
+.home-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  position: absolute;
+  
+}
+
+
+.form-quiz {
+  display: grid;
+  place-items: center;
+  width: 400px;
+  height: 472px;
+  padding: 15px;
+  background-color: #161616e0;
+  box-shadow: 0px 5px 20px #0f0e0f;
+  border-radius: 30px;
+  position: relative;
+}
+
+.title-formq {
+  color: #5616eb;
+  font-weight: 600;
+  font-size: 33px;
+  margin-bottom: 2.5rem;
+}
+
+.text-quiz {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-opt {
+  margin-top: 1.8rem;
+}
+
+.body-quiz {
+  position: absolute;
+  top: 50%;
+  width: 275px;
+  margin: -185px auto 0 auto;
+}
+
+.options {
+  gap: 0.5rem;
+}
+
+.submit-container {
+  margin-top: 0.5rem;
+}
+
+.btn-quiz {
+  margin-top: 0.9rem !important;
+}
+
 /* *******************   MEDIA  ****************** */
 
 @media screen and (max-width: 768px) {
