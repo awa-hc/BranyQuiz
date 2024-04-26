@@ -249,6 +249,22 @@
   text-align: center;
 }
 
+.editimg-icon {
+  width: 1.2rem;
+  margin-left: 28%;
+  margin-top: 26%;
+  position: absolute;
+}
+.editimg-container {
+  position: absolute;
+  top: 10%;
+  right: 38%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #5616eb;
+}
+
 /* *******************  FRIENDS PAGE ****************** */
 
 .container-s{
@@ -396,5 +412,11 @@
   .btn-friend {
     font-size: 0.8rem;
     padding: 12px 10px 10px 10px;
+  }
+  .editimg-container{
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    right: 35%;
   }
 }

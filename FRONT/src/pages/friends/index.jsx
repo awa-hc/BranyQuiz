@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const Friends = () => {
 
@@ -8,9 +9,28 @@ export const Friends = () => {
     const handleAddFriend = async () => {
         try {
             await axios.post('https://backend/', { query });
-            alert('Solicitud de amistad enviada!');
+            toast.success('¡Solicitud enviada!', {
+                position: "bottom-left",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         } catch (error) {
             console.error('Hubo un error al enviar la solicitud de amistad:', error);
+            toast.error('Hubo un error al enviar la solicitud de amistad', {
+                position: "bottom-left",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         }
     };
 

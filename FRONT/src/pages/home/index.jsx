@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Home = () => {
 
@@ -12,9 +14,23 @@ export const Home = () => {
         console.log(form)
     }
 
+    const onSubmit = (e) => {
+        e.preventDefault()
+        toast.success('¡Quiz creado correctamente!', {
+            position: "bottom-left",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+    }
+
     return (
         <div className="bg center">
-                <form type="submit" className="form-quiz">
+                <form type="submit" className="form-quiz" onSubmit={onSubmit}>
                 <div className="body-quiz">
                     <div id="welcome-lines">
                     <div className="title-formq">¡Crea tu Quiz!</div>
